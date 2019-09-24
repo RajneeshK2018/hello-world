@@ -1,0 +1,25 @@
+\\qspl_adc\shares\AWS_builds\Dropbox\products\QAS\feature\apiactions-
+
+VPN
+
+User: rajneesh.kumar
+
+Password: 4<~Y)Y;4F~S=fehj
+
+ 
+
+GIT
+User: rajneesh.kumar
+
+Password: vj6B[.Jz6PWhT3*G
+
+ 
+
+Jenkins
+
+User: rajneesh.kumar
+
+Password: h5)<W5enhanced
+------------
+http://10.0.0.5:8080/scm/git/qtprepo
+"C:\Users\rajneesh.kumar\AppData\Local\Temp\Qualitia.properties" "sa"
