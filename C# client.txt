@@ -1,0 +1,43 @@
+using System;
+using System.Net;
+using System.Net.Sockets;
+
+namespace SocketConnect
+{
+    public class Class1
+    {
+        static Socket clientSocket;
+        IPEndPoint serverAddress = new IPEndPoint(IPAddress.Parse("192.168.25.224"), 3000);
+
+        // Receiving data from server
+        public static String getCommand()
+        {
+            IPEndPoint serverAddress = new IPEndPoint(IPAddress.Parse("192.168.25.224"), 3000);
+
+            clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            clientSocket.Connect(serverAddress);
+
+
+            byte[] rcvLenBytes = new byte[4096];
+            clientSocket.Receive(rcvLenBytes);
+            int rcvLen = System.BitConverter.ToInt32(rcvLenBytes, 0);
+            byte[] rcvBytes = new byte[rcvLen];
+            clientSocket.Receive(rcvBytes);
+            String rcv = System.Text.Encoding.ASCII.GetString(rcvBytes);
+
+            return rcv;
+        }
+
+        //Send data back to server
+        public static void SetStatus(String toSend)
+        {
+            int toSendLen = System.Text.Encoding.ASCII.GetByteCount(toSend);
+            byte[] toSendBytes = System.Text.Encoding.ASCII.GetBytes(toSend);
+            byte[] toSendLenBytes = System.BitConverter.GetBytes(toSendLen);
+            clientSocket.Send(toSendLenBytes);
+            clientSocket.Send(toSendBytes);
+            clientSocket.Close();
+        }
+
+    }
+}
