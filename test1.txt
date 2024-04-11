@@ -1,2 +1,1 @@
-changes by Git3
-Added more changes
+Combined changes
