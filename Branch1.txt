@@ -1,5 +1,1 @@
-<<<<<<< HEAD
 user 3 updates
-=======
-updated by user2
->>>>>>> 35432adc6513d7854a302ec360cd58ebff1636c8
